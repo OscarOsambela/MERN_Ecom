@@ -10,6 +10,7 @@ import SearchScreen from './Screens/SearchScreen';
 import { listProductCategories } from './Actions/productAction';
 import LoadingBox from './Components/LoadingBox';
 import MessageBox from './Components/MessageBox';
+import MapScreen from './Screens/MapScreen';
 import SellerScreen from './Screens/SellerScreen';
 import CartScreen from './Screens/CartScreen';
 import ProductScreen from './Screens/ProductScreen';
@@ -202,7 +203,7 @@ function App() {
             exact
           ></Route>
            <Route
-            path="/search/category/:category/name/:name/min/:min/max/:max/rating/:rating/order/:order"
+            path="/search/category/:category/name/:name/min/:min/max/:max/rating/:rating/order/:order/pageNumber/:pageNumber"
             component={SearchScreen}
             exact
           ></Route>
@@ -210,8 +211,14 @@ function App() {
             path="/profile"
             component={ProfileScreen}
           ></PrivateRoute>
+          <PrivateRoute path="/map" component={MapScreen}></PrivateRoute>
           <AdminRoute
             path="/productlist"
+            component={ProductListScreen}
+            exact
+          ></AdminRoute>
+          <AdminRoute
+            path="/productlist/pageNumber/:pageNumber"
             component={ProductListScreen}
             exact
           ></AdminRoute>
