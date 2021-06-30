@@ -11,6 +11,7 @@ import { listProductCategories } from './Actions/productAction';
 import LoadingBox from './Components/LoadingBox';
 import MessageBox from './Components/MessageBox';
 import MapScreen from './Screens/MapScreen';
+import DashboardScreen from './Screens/DashboardScreen';
 import SellerScreen from './Screens/SellerScreen';
 import CartScreen from './Screens/CartScreen';
 import ProductScreen from './Screens/ProductScreen';
@@ -231,6 +232,10 @@ function App() {
           <AdminRoute
             path="/user/:id/edit"
             component={UserEditScreen}
+          ></AdminRoute>
+          <AdminRoute
+            path="/dashboard"
+            component={DashboardScreen}
           ></AdminRoute>
           <SellerRoute
             path="/productlist/seller"
